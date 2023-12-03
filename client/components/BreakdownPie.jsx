@@ -53,11 +53,21 @@ const BreakdownPie = ({ side }) => {
       },
       options: {
         plugins: {
+          legend: {
+            labels: {
+              color: 'white',
+            },
+          },
           title: {
             display: true,
             text: 'Percent of Total State Renewable Energy Generation by Type',
-            fontSize: 10,
             color: 'white',
+            font: {
+              size: 15,
+            },
+            padding: {
+              bottom: 20,
+            },
           },
         },
       },

@@ -32,11 +32,21 @@ const EnergyPie = ({ side }) => {
       },
       options: {
         plugins: {
+          legend: {
+            labels: {
+              color: 'white',
+            },
+          },
           title: {
             display: true,
             text: 'Percent Non-Renewable vs Renewable Energy Generation by State',
-            fontSize: 10,
             color: 'white',
+            font: {
+              size: 15,
+            },
+            padding: {
+              bottom: 20,
+            },
           },
         },
       },

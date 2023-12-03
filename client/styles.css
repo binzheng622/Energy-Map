@@ -1,2 +1,75 @@
-background-color: #25283b;
-background-color: #42476b;
+body {
+  background-color: #25283b;
+  margin: 1.5em;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* Header Container */
+.headerContainer {
+  color: White;
+  background-color: #42476b;
+  border-radius: 1em;
+  text-align: center;
+}
+
+/* State Container */
+.stateContainer {
+  display: flex;
+  gap: 1.5em;
+}
+
+.stateDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  background-color: #42476b;
+  border-radius: 1em;
+  width: 30%;
+  padding: 2em;
+}
+
+.stateTitle {
+  color: white;
+  margin: 10px;
+}
+
+.energyBar {
+  min-width: 90%;
+}
+
+.breakdownBar {
+  min-width: 90%;
+}
+
+/* Compare Container */
+.compareContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #42476b;
+  border-radius: 1em;
+  padding: 3em;
+}
+
+.compareState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  text-align: center;
+  color: white;
+  width: 50%;
+}
+
+.energyPie {
+  min-width: 60%;
+}
+
+.breakdownPie {
+  min-width: 62%;
+}

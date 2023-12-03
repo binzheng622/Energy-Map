@@ -2,15 +2,15 @@ const db = require('../models/powerModel');
 
 const powerController = {};
 
-//sync state power data
+//fetch state power data
 powerController.loadState = async (req, res, next) => {
   const state = req.params.state;
   try {
     const loadState = [state];
     const stateEnergy =
-      'SELECT SUM("Total_MW") AS Total_mw, SUM("Hydro_MW") AS Hydro_mw, SUM("Wind_MW") AS wind_mw, SUM("Solar_MW") AS solar_mw, SUM("Geo_MW") AS geo_mw, SUM("Bio_MW") AS bio_mw, SUM("HydroPS_MW") AS HydroPs_mw FROM power_plants WHERE power_plants."State" ILIKE $1';
+      'SELECT SUM("Total_MW") AS total_mw, SUM("Hydro_MW") AS hydro_mw, SUM("Wind_MW") AS wind_mw, SUM("Solar_MW") AS solar_mw, SUM("Geo_MW") AS geo_mw, SUM("Bio_MW") AS bio_mw, SUM("HydroPS_MW") AS hydroPs_mw FROM power_plants WHERE power_plants."State" ILIKE $1';
 
-    //fetch all state energy
+    //fetch all energy of given state
     const data = await db.query(stateEnergy, loadState);
 
     const energyAll = data.rows[0];

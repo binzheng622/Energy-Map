@@ -59,8 +59,13 @@ const EnergyBar = () => {
           title: {
             display: true,
             text: 'Percent Non-Renewable vs Renewable Energy Generation by State',
-            fontSize: 10,
             color: 'white',
+            font: {
+              size: 15,
+            },
+            padding: {
+              bottom: 30,
+            },
           },
           tooltip: {
             callbacks: {

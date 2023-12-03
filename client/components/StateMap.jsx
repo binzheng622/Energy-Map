@@ -28,6 +28,7 @@ const StateMap = () => {
         height: '50vh',
         borderRadius: '1em',
       }}
+      attributionControl={false}
     >
       {StateCoordinate.features.map((state) => {
         const coordinates = state.geometry.coordinates[0].map((item) => [

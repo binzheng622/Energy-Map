@@ -83,8 +83,13 @@ const BreakdownBar = () => {
           title: {
             display: true,
             text: 'Percent of Total State Renewable Energy Generation by Type',
-            fontSize: 10,
             color: 'white',
+            font: {
+              size: 15,
+            },
+            padding: {
+              bottom: 30,
+            },
           },
           tooltip: {
             callbacks: {

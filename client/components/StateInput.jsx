@@ -31,7 +31,7 @@ const StateInput = ({ side }) => {
 
   return (
     <div className='stateInput'>
-      <p>Search by state</p>
+      <h2>Search by state</h2>
       <form>
         <label>Please select a state or territory: </label>
         <select id={`${side}`}>{stateArray}</select>
