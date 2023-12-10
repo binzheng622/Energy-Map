@@ -8,7 +8,7 @@ powerController.loadState = async (req, res, next) => {
   try {
     const loadState = [state];
     const stateEnergy =
-      'SELECT SUM("Total_MW") AS total_mw, SUM("Hydro_MW") AS hydro_mw, SUM("Wind_MW") AS wind_mw, SUM("Solar_MW") AS solar_mw, SUM("Geo_MW") AS geo_mw, SUM("Bio_MW") AS bio_mw, SUM("HydroPS_MW") AS hydroPs_mw FROM power_plants WHERE power_plants."State" ILIKE $1';
+      'SELECT SUM("total_mw") AS total_mw, SUM("hydro_mw") AS hydro_mw, SUM("wind_mw") AS wind_mw, SUM("solar_mw") AS solar_mw, SUM("geo_mw") AS geo_mw, SUM("bio_mw") AS bio_mw, SUM("hydrops_mw") AS hydroPs_mw FROM power_plants WHERE power_plants."state" ILIKE $1';
 
     //fetch all energy of given state
     const data = await db.query(stateEnergy, loadState);
