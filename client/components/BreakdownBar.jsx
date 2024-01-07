@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Chart from 'chart.js/auto';
 
+//chartjs bar chart used for state map
 const BreakdownBar = () => {
   const chartId = Math.random();
   const chartData = useSelector((state) => state.states.hoverState);

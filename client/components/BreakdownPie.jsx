@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Chart from 'chart.js/auto';
 
+//chartjs pie chart used for comparison
 const BreakdownPie = ({ side }) => {
   const chartId = Math.random();
+
   let chartData;
   if (side === 'left') {
     chartData = useSelector((state) => state.states.compareState1);

@@ -8,6 +8,7 @@ import 'leaflet/dist/leaflet.css';
 const StateMap = () => {
   const dispatch = useDispatch();
 
+  //fetch database for state data on hover
   const fetchData = (state) => {
     fetch(`/data/${state}`, {
       method: 'POST',
@@ -54,6 +55,7 @@ const StateMap = () => {
                   weight: 5,
                   color: '#666',
                 });
+                //envoke fetch on mouse over
                 fetchData(state.properties.name);
               },
               mouseout: (e) => {

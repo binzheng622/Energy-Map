@@ -6,6 +6,7 @@ import StateName from '../assets/stateName.js';
 const StateInput = ({ side }) => {
   const dispatch = useDispatch();
 
+  //fetch data on dropdown selector for state
   const dropFetch = (e) => {
     e.preventDefault();
     const stateSelected = document.getElementById(`${side}`).value;
@@ -24,6 +25,7 @@ const StateInput = ({ side }) => {
       .catch((error) => console.log(error));
   };
 
+  //create state dropdown
   const stateArray = [];
   StateName.forEach((state) => {
     stateArray.push(<option value={state}>{state}</option>);
