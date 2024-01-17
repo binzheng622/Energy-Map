@@ -1,17 +1,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { updateState1, updateState2 } from '../reducers/stateReducer.js';
-import StateName from '../assets/stateName.js';
+import { updateState1, updateState2 } from '../reducers/stateReducer';
+import StateName from '../assets/stateName';
 
-const StateInput = ({ side }) => {
+const StateInput = ({ side }: { side: string }) => {
   const dispatch = useDispatch();
 
   //fetch data on dropdown selector for state
-  const dropFetch = (e) => {
+  const dropFetch = (e: any) => {
     e.preventDefault();
-    const stateSelected = document.getElementById(`${side}`).value;
+    const stateDropdown: any = document.getElementById(`${side}`);
+    const stateSelected = stateDropdown.value;
 
-    fetch(`/data/${stateSelected}`, {
+    fetch(`/api/data/${stateSelected}`, {
       method: 'POST',
     })
       .then((response) => response.json())
@@ -26,7 +27,7 @@ const StateInput = ({ side }) => {
   };
 
   //create state dropdown
-  const stateArray = [];
+  const stateArray: any[] = [];
   StateName.forEach((state) => {
     stateArray.push(<option value={state}>{state}</option>);
   });

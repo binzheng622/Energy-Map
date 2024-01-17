@@ -1,9 +1,9 @@
 import React from 'react';
-import StateInput from './StateInput.jsx';
-import EnergyPie from './EnergyPie.jsx';
-import BreakdownPie from './BreakdownPie.jsx';
+import StateInput from './StateInput';
+import EnergyPie from './EnergyPie';
+import BreakdownPie from './BreakdownPie';
 
-const CompareState = ({ side }) => {
+const CompareState = ({ side }: { side: string }) => {
   return (
     <div className='compareState'>
       <StateInput side={side} />

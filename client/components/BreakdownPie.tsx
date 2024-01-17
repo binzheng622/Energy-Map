@@ -3,18 +3,18 @@ import { useSelector } from 'react-redux';
 import Chart from 'chart.js/auto';
 
 //chartjs pie chart used for comparison
-const BreakdownPie = ({ side }) => {
-  const chartId = Math.random();
+const BreakdownPie = ({ side }: { side: string }) => {
+  const chartId: string = `${Math.random()}`;
 
-  let chartData;
+  let chartData: any;
   if (side === 'left') {
-    chartData = useSelector((state) => state.states.compareState1);
+    chartData = useSelector((state: any) => state.states.compareState1);
   } else if (side === 'right') {
-    chartData = useSelector((state) => state.states.compareState2);
+    chartData = useSelector((state: any) => state.states.compareState2);
   }
 
   useEffect(() => {
-    const chartElement = document.getElementById(chartId);
+    const chartElement: any = document.getElementById(chartId);
 
     const myChart = new Chart(chartElement, {
       type: 'pie',

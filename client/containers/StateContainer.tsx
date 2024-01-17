@@ -1,6 +1,6 @@
 import React from 'react';
-import StateMap from '../components/StateMap.jsx';
-import StateDetail from '../components/StateDetail.jsx';
+import StateMap from '../components/StateMap';
+import StateDetail from '../components/StateDetail';
 
 const StateContainer = () => {
   return (

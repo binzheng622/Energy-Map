@@ -1,5 +1,5 @@
 import React from 'react';
-import CompareState from '../components/CompareState.jsx';
+import CompareState from '../components/CompareState';
 
 const CompareContainer = () => {
   return (

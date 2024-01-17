@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
   //index.js file location
   entry: {
-    src: './client/index.js',
+    src: './client/index.tsx',
   },
   //where to save final build files
   output: {
@@ -23,6 +24,12 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+      //use for ts & tsx files
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
       //use for css files
       {
         test: /\.css/,
@@ -30,11 +37,17 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   plugins: [
     //use to load react components
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './client/index.html',
+    }),
+    new CopyPlugin({
+      patterns: [{ from: './client/styles.css' }],
     }),
   ],
   devServer: {
@@ -45,7 +58,7 @@ module.exports = {
     },
     //send all request to backend
     proxy: {
-      '/': 'http://localhost:3000',
+      '/api': 'http://localhost:3000',
     },
   },
 };

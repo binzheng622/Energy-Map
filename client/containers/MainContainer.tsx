@@ -1,7 +1,7 @@
 import React from 'react';
-import HeaderContainer from './HeaderContainer.jsx';
-import StateContainer from './StateContainer.jsx';
-import CompareContainer from './CompareContainer.jsx';
+import HeaderContainer from './HeaderContainer';
+import StateContainer from './StateContainer';
+import CompareContainer from './CompareContainer';
 
 const MainContainer = () => {
   return (

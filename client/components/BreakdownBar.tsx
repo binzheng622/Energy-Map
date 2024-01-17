@@ -4,11 +4,11 @@ import Chart from 'chart.js/auto';
 
 //chartjs bar chart used for state map
 const BreakdownBar = () => {
-  const chartId = Math.random();
-  const chartData = useSelector((state) => state.states.hoverState);
+  const chartId: string = `${Math.random()}`;
+  const chartData = useSelector((state: any) => state.states.hoverState);
 
   useEffect(() => {
-    const chartElement = document.getElementById(chartId);
+    const chartElement: any = document.getElementById(chartId);
 
     const myChart = new Chart(chartElement, {
       type: 'bar',

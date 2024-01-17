@@ -1,16 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { updateHover } from '../reducers/stateReducer.js';
+import { updateHover } from '../reducers/stateReducer';
 import { MapContainer, Polygon } from 'react-leaflet';
-import StateCoordinate from '../assets/stateCoordinates.js';
+import StateCoordinate from '../assets/stateCoordinates';
 import 'leaflet/dist/leaflet.css';
 
 const StateMap = () => {
   const dispatch = useDispatch();
 
   //fetch database for state data on hover
-  const fetchData = (state) => {
-    fetch(`/data/${state}`, {
+  const fetchData = (state: string) => {
+    fetch(`/api/data/${state}`, {
       method: 'POST',
     })
       .then((response) => response.json())
@@ -31,8 +31,8 @@ const StateMap = () => {
       }}
       attributionControl={false}
     >
-      {StateCoordinate.features.map((state) => {
-        const coordinates = state.geometry.coordinates[0].map((item) => [
+      {StateCoordinate.features.map((state: any) => {
+        const coordinates = state.geometry.coordinates[0].map((item: any) => [
           item[1],
           item[0],
         ]);
@@ -48,7 +48,7 @@ const StateMap = () => {
             }}
             positions={coordinates}
             eventHandlers={{
-              mouseover: (e) => {
+              mouseover: (e: any) => {
                 const layer = e.target;
                 layer.setStyle({
                   fillOpacity: 0.7,
@@ -58,7 +58,7 @@ const StateMap = () => {
                 //envoke fetch on mouse over
                 fetchData(state.properties.name);
               },
-              mouseout: (e) => {
+              mouseout: (e: any) => {
                 const layer = e.target;
                 layer.setStyle({
                   fillColor: '#FD8D3C',

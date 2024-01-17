@@ -1,10 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import EnergyBar from './EnergyBar.jsx';
-import BreakdownBar from './BreakdownBar.jsx';
+import EnergyBar from './EnergyBar';
+import BreakdownBar from './BreakdownBar';
 
 const StateDetail = () => {
-  const stateName = useSelector((state) => state.states.hoverState.state);
+  const stateName: string = useSelector(
+    (state: any) => state.states.hoverState.state
+  );
 
   return (
     <div className='stateDetail'>
