@@ -1,13 +1,13 @@
-const request = require('supertest');
+import request from 'supertest';
 const server = 'http://localhost:3000';
 
 describe('Server Endpoints', () => {
   //test response from unknown endpoint
-  describe('/', () => {
+  describe('/unknown', () => {
     describe('GET', () => {
       it('responds with 404 status', () => {
         return request(server)
-          .get('/')
+          .get('/unknown')
           .expect('Content-Type', /text\/html/)
           .expect(404)
           .expect((res) => {
@@ -22,11 +22,11 @@ describe('Server Endpoints', () => {
   });
 
   //test response from fetch state data endpoint
-  describe('/data/:state', () => {
+  describe('/api/data/:state', () => {
     describe('POST', () => {
       it('responds with 200 status and JSON content type', () => {
         return request(server)
-          .post('/data/California')
+          .post('/api/data/California')
           .expect('Content-Type', /application\/json/)
           .expect(200);
       });

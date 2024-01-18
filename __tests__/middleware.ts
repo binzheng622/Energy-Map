@@ -1,10 +1,10 @@
-const controller = require('../server/controllers/powerController.js');
+import controller from '../server/controllers/powerController.js';
 
 jest.setTimeout(60000); // 60 sec before timeout
 
 describe('Middleware Tests', () => {
-  const req = { params: { state: 'California' } };
-  const res = { locals: {} };
+  const req: any = { params: { state: 'California' } };
+  const res: any = { locals: {} };
   const next = jest.fn(); // Jest mock function
 
   describe('powerController middleware', () => {
