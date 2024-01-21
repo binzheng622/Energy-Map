@@ -46,6 +46,7 @@ module.exports = {
       title: 'Development',
       template: './client/index.html',
     }),
+    //seperate css file durring bundle
     new CopyPlugin({
       patterns: [{ from: './client/styles.css' }],
     }),
